@@ -31,7 +31,7 @@ app.use(express.json());
 
 /* --------------------------------- routes --------------------------------- */
 app.get('/', (req, res) => {
-    res.json({'message':'Hola mundo'});
+    res.render('index')
 });
 
 /* ------------------------------ public files (access)------------------------------ */
