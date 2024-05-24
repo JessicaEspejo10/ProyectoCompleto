@@ -10,3 +10,5 @@ CREATE TABLE personas(
 );
 
 SELECT * FROM personas;
+
+ALTER TABLE personas ADD detail VARCHAR(50) AFTER age;
