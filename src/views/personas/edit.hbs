@@ -6,7 +6,7 @@
                     <h3 class="text-uppercase"> Editar una persona </h3>
                 </div>
                 <div class="card-body">
-                    <form action="/edit/{{persona.id}}" method="post">
+                    <form action="/edit/{{persona.id}}" method="post" enctype="multipart/form-data">
                         <div class="input-group mt-2">
                             <label for="name" class="input-group-text"> Nombre Persona </label>
                             <input class="form-control" type="text" name="name" id="name" placeholder="Ejm: Jessica" value="{{persona.name}}" autofocus required>
@@ -26,7 +26,14 @@
                             <label for="detail" class="input-group-text"> Detalle/Observación </label>
                             <input class="form-control" type="text" name="detail" id="detail" placeholder="Ejm: Empleado" value="{{persona.detail}}" autofocus required>
                         </div>
-
+                        <div class="input-group mt-2">
+                                <input class="form-control" type="file" name="file" id="file" autofocus>
+                        </div>
+                        {{#if persona.image}}
+                            <div class="input-group mt-2">
+                                    <img src="/uploads/{{persona.image}}" class="card-img-top mx-auto m-2 rounded-circle" style="width: 150px; height: 150px; display:block ">
+                            </div>
+                        {{/if}}
                         <div class="form-group mt-4 d-grid gap-2">
                             <button class="btn btn-success"> Actualizar </button>
                         </div>
